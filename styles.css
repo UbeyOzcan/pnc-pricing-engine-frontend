@@ -69,6 +69,7 @@ body {
     background-color: white;
     border-radius: 20px;
     overflow: hidden;
+    margin-bottom: 35px;
 }
 
 
@@ -114,6 +115,14 @@ body {
 }
 
 .primary-btn {
+    background: linear-gradient(#d147d1, #702acb);
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+}
 
-
+.primary-btn:hover {
+    background: darkcyan;
 }
