@@ -1,38 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>P&C Pricing Engine</title>
-        <link rel="stylesheet" href="styles.css">
-        <script type="module" src="main.js"></script>
-    </head>
-    <body>
-        <div class="hero">
-            <h1>Welcome ! </h1>
-            <h2>Pet Adoption List</h2>
-        </div>
-
-        <div class="filter-nav">
-            <a href="#">All Animals</a>
-            <a href="#">Dogs</a>
-            <a href="#">Cats</a>
-            <a href="#">Rabits</a>
-        </div>
-        <div class="animals">
-        </div>
-        <template id="animal-card">
-            <div class="animal-card">
-                <div class="animal-card-text">
-                    <h3></h3>
-                    <small><span class ='age' > 3 Years old </span> - <span class="species">Cat </span></small>
-                    <p class="description">Meowsalot is a talkative friend that loves to play and is great with children. He is looking for a forever home today! </p>
-                    <a href="#" class="primary-btn">Adopt <span class = "name"></span></a>
-                </div>
-
-                <div class="animal-card-photo">
-                    <img src="https://learnwebcode.github.io/pet-adoption-data/photos/meowsalot.webp" alt="Meowsalot">
-                </div>
-            </div>
-        </template>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>P&C Pricing Engine</title>
+    <link rel="stylesheet" href="ressources/css/styles.css">
+    <script type="module" src="ressources/js/main.js"></script>
+</head>
+<body>
+<div class="hero">
+    <h1>Welcome ! </h1>
+    <h2>Motor Insurance Pricing Engine</h2>
+</div>
+<form>
+    <label for="cars">Choose a car:</label>
+    <select id="cars" name="cars">
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="fiat">Fiat</option>
+      <option value="audi">Audi</option>
+    </select>
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" min="0" max="100" step="10" value="30">
+</select>
+</form>
+</body>
 </html>
