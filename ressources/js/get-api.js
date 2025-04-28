@@ -1,5 +1,5 @@
-async function getData(product, power, vehage, drivage, bm, vhgas, area) {
-  const url = `http://127.0.0.1:8080/${product}?power=${power}&VehAge=${vehage}&DrivAge=${drivage}&BonusMalus=${bm}&VehGas=${vhgas}&Area=${area}`;
+async function getData(product, power, vehage, drivage, vhgas, area) {
+  const url = `http://127.0.0.1:8080/${product}?power=${power}&VehAge=${vehage}&DrivAge=${drivage}&VehGas=${vhgas}&Area=${area}`;
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -14,4 +14,4 @@ async function getData(product, power, vehage, drivage, bm, vhgas, area) {
   }
 }
 
-getData('motor', '90', '3', '30', '0', 'Regular', 'D')
+getData('motor', '90', '3', '30', 'Regular', 'D')
