@@ -107,20 +107,20 @@ async function getPremium(formData) {
 function displayResult(premiumData) {
     const resultContainer = document.getElementById('resultContainer');
     const premiumAmount = document.getElementById('premiumAmount');
-    const basePremium = document.getElementById('basePremium');
-    const riskFactor = document.getElementById('riskFactor');
-    const vehicleSurcharge = document.getElementById('vehicleSurcharge');
-    const driverDiscount = document.getElementById('driverDiscount');
+    const severity = document.getElementById('severity');
+    const freq = document.getElementById('freq');
+    //const vehicleSurcharge = document.getElementById('vehicleSurcharge');
+    //const driverDiscount = document.getElementById('driverDiscount');
     
     // Format currency values
     const formatCurrency = (value) => `€${value.toFixed(2)}`;
     
     // Update the UI with the API response
     premiumAmount.textContent = formatCurrency(premiumData['Risk Premium'][0]);
-    basePremium.textContent = formatCurrency(premiumData['Predicted Severity'][0] * 0.8); // Example calculation
-    riskFactor.textContent = premiumData['Predicted Frequency'][0].toFixed(4);
-    vehicleSurcharge.textContent = formatCurrency(premiumData['Predicted Severity'][0] * 0.1); // Example
-    driverDiscount.textContent = formatCurrency(premiumData['Predicted Severity'][0] * 0.05); // Example
+    severity.textContent = formatCurrency(premiumData['Predicted Severity'][0]); // Example calculation
+    freq.textContent = premiumData['Predicted Frequency'][0].toFixed(4);
+    //vehicleSurcharge.textContent = formatCurrency(premiumData['Predicted Severity'][0] * 0.1); // Example
+    //driverDiscount.textContent = formatCurrency(premiumData['Predicted Severity'][0] * 0.05); // Example
     
     // Show the result container
     resultContainer.style.display = 'block';
