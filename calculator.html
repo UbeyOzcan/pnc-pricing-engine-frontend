@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeDrive Insurance | Premium Calculator</title>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="ressources/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="module" src="ressources/js/main.js"></script>
+</head>
+<body data-page="calculator">
+<header class="main-header">
+    <div class="header-container">
+        <div class="logo">
+            <i class="fas fa-shield-alt"></i>
+            <span>SafeDrive</span>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" data-page="home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" data-page="products">Products <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="calculator.html" data-page="calculator">Car Insurance</a>
+                        <a href="#" data-page="home-insurance">Home Insurance</a>
+                        <a href="#" data-page="life-insurance">Life Insurance</a>
+                    </div>
+                </li>
+                <li><a href="claims.html" data-page="claims">Claims</a></li>
+                <li><a href="about.html" data-page="about">About Us</a></li>
+                <li><a href="contact.html" data-page="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="calculator-container">
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h1>Motor Insurance Premium Calculator</h1>
+            <p>Get an instant quote tailored to your specific needs</p>
+        </div>
+    </section>
+
+    <div class="form-results-wrapper">
+        <form id="insuranceForm" class="calculator-form">
+            <div class="form-header">
+                <h2><i class="fas fa-calculator"></i> Your Details</h2>
+                <p>Please provide the following information to calculate your premium</p>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="vehPower">
+                        <i class="fas fa-tachometer-alt"></i> Vehicle Power (kW)
+                    </label>
+                    <select id="vehPower" name="vehPower" required></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="vehAge">
+                        <i class="fas fa-calendar-alt"></i> Vehicle Age (years)
+                    </label>
+                    <select id="vehAge" name="vehAge" required></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="drivAge">
+                        <i class="fas fa-user"></i> Driver Age
+                    </label>
+                    <select id="drivAge" name="drivAge" required></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="bonusMalus">
+                        <i class="fas fa-percentage"></i> Bonus-Malus Level
+                    </label>
+                    <select id="bonusMalus" name="bonusMalus" required></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="vehBrand">
+                        <i class="fas fa-car"></i> Vehicle Brand
+                    </label>
+                    <select id="vehBrand" name="vehBrand" required></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="vehGas">
+                        <i class="fas fa-gas-pump"></i> Fuel Type
+                    </label>
+                    <select id="vehGas" name="vehGas" required></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="area">
+                        <i class="fas fa-map-marker-alt"></i> Area
+                    </label>
+                    <select id="area" name="area" required></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="density">
+                        <i class="fas fa-users"></i> Population Density
+                    </label>
+                    <select id="density" name="density" required></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="region">
+                        <i class="fas fa-globe-europe"></i> Region
+                    </label>
+                    <select id="region" name="region" required></select>
+                </div>
+            </div>
+
+            <div class="form-footer">
+                <button type="submit" id="calculateBtn" class="btn-primary">
+                    <span class="btn-text">Calculate Premium</span>
+                    <span class="btn-icon"><i class="fas fa-calculator"></i></span>
+                </button>
+            </div>
+        </form>
+
+        <div id="resultContainer" class="results-container">
+            <div class="results-header">
+                <h2><i class="fas fa-file-invoice-dollar"></i> Your Premium</h2>
+                <p>Here's your personalized insurance quote</p>
+            </div>
+
+            <div class="premium-card">
+                <div class="premium-amount-container">
+                    <div class="premium-label">Your Premium</div>
+                    <div id="premiumAmount" class="premium-amount">€0.00</div>
+                    <div class="premium-note">Incl. all taxes and fees</div>
+                </div>
+
+                <div class="premium-details">
+                    <h3><i class="fas fa-info-circle"></i> Premium Breakdown</h3>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <span class="detail-label">Severity</span>
+                            <span id="severity" class="detail-value">€0.00</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Frequency</span>
+                            <span id="freq" class="detail-value">0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="premium-features">
+                <h3><i class="fas fa-shield-alt"></i> What's Included</h3>
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> Comprehensive collision coverage</li>
+                    <li><i class="fas fa-check"></i> 24/7 roadside assistance</li>
+                    <li><i class="fas fa-check"></i> Personal accident cover</li>
+                    <li><i class="fas fa-check"></i> Legal protection included</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>SafeDrive Insurance</h3>
+            <p>Protecting what matters most since 1985</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="claims.html">Claims Center</a></li>
+                <li><a href="#">Policy Documents</a></li>
+                <li><a href="#">Make a Payment</a></li>
+                <li><a href="#">Contact Agent</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Legal</h3>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Complaints</a></li>
+                <li><a href="#">Regulatory Info</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2023 SafeDrive Insurance Group. All rights reserved.</p>
+    </div>
+</footer>
+<script src="ressources/js/navigation.js"></script>
+</body>
+</html>
