@@ -82,7 +82,7 @@ document.getElementById('insuranceForm').addEventListener('submit', async functi
 
 // API call function with CORS handling
 async function getPremium(formData) {
-    const url = new URL('http://127.0.0.1:8080/motor');
+    const url = new URL('https://pnc-pricing-engine-backend.onrender.com/motor');
     url.searchParams.append('power', formData.power);
     url.searchParams.append('VehAge', formData.vehage);
     url.searchParams.append('DrivAge', formData.drivage);
