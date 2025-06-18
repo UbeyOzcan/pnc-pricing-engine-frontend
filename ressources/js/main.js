@@ -59,12 +59,15 @@ document.getElementById('insuranceForm').addEventListener('submit', async functi
             power: document.getElementById('vehPower').value,
             vehage: document.getElementById('vehAge').value,
             drivage: document.getElementById('drivAge').value,
+            bm: document.getElementById('bonusMalus').value
             vhgas: document.getElementById('vehGas').value,
-            area: document.getElementById('area').value
+            area: document.getElementById('area').value,
+            density: document.getElementById('density').value,
+            brand: document.getElementById('vehBrand').value
         };
 
         // Validate all fields are selected
-        if (!formData.power || !formData.vehage || !formData.drivage || !formData.vhgas || !formData.area) {
+        if (!formData.power || !formData.vehage || !formData.drivage || !formData.vhgas || !formData.area || !formData.bm || !formData.density || !formData.brand) {
             throw new Error('Please fill in all required fields');
         }
 
@@ -88,6 +91,9 @@ async function getPremium(formData) {
     url.searchParams.append('DrivAge', formData.drivage);
     url.searchParams.append('VehGas', formData.vhgas);
     url.searchParams.append('Area', formData.area);
+    url.searchParams.append('BonusMalus', formData.bm);
+    url.searchParams.append('Density', formData.density);
+    url.searchParams.append('VhBrand', formData.brand);
 
     const response = await fetch(url, {
         mode: 'cors',
