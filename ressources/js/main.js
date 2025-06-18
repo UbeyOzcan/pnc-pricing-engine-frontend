@@ -59,7 +59,7 @@ document.getElementById('insuranceForm').addEventListener('submit', async functi
             power: document.getElementById('vehPower').value,
             vehage: document.getElementById('vehAge').value,
             drivage: document.getElementById('drivAge').value,
-            bm: document.getElementById('bonusMalus').value
+            bm: document.getElementById('bonusMalus').value,
             vhgas: document.getElementById('vehGas').value,
             area: document.getElementById('area').value,
             density: document.getElementById('density').value,
